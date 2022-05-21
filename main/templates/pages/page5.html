@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Free CET NEET Coaching
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="card shadow my-3">
+
+        <div class="card-body">
+            <h2 class="card-title">
+                Free CET NEET Coaching
+            </h2>
+            <p class="card-text">
+                We are offering limited free online coaching classes on every weekend to our member students who wish to
+                prepare for competitive exams mainly KCET and NEET. Member students of both Class 11th and 12th are
+                welcome to join this. Link to join classes will be shared with students WhatsApp number registered with
+                us.
+            </p>
+        </div>
+        <div class="card-body text-center ">
+            <a href="{% url 'main:membership' %}" class="btn btn-primary">Become a
+                Member </a>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

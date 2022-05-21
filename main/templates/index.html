@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+National Pre-University Students, Parents and Teachers Association
+{% endblock title %}
+{% block content %}
+{% for i in notices %}
+<marquee behavior="scroll" direction="left">{{ i.notice | safe }}</marquee>
+{% endfor %}
+{% if is_mobile %}
+{% include 'index/carousel/carousel_mobile.html' %}
+{% else %}
+{% include 'index/carousel/carousel_desktop.html' %}
+{% endif %}
+<div class="card-group">
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Private School Fee Regulation Bill (For Welfare of Students & Parents)</h5>
+      <p class="card-text">Let's Join Together and Stop the Commercialization of Basic Education
+        Help Us in our fight to Regulate the Private School Fees across India. 1) In this Act, unless the context
+        otherwise requires, "Academic year" means the year commencing on the first day of April to the last day of
+        March;
+        "Aided school" means a school receiving any sum of money as aid out of the State funds;</p>
+      <a href="{% url 'main:page' slug='private-school-fee-regulation-bill' %}" class="btn btn-primary">Read
+        more....</a>
+    </div>
+  </div>
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Security of Service to Employees Bill (For Welfare of Teachers)</h5>
+      <p class="card-text">Unaided Private Schools (Security of Services to Employees) Bill, 2021 to be drafted by
+        AIPA
+        – All India Parents Association, aims at addressing issues of teachers and other staff working in unaided
+        private schools countrywide particularly in the matter of security of service and payment of pay commission
+        salaries.
+      </p>
+      <a href="{% url 'main:page' slug='security-of-service-to-employees-bill' %}" class="btn btn-primary">Read
+        more....</a>
+    </div>
+  </div>
+</div>
+
+<div class="card-group">
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Get Free Career Counselling</h5>
+      <p class="card-text">Pre-University level is very crucial in any student's career life. Decisions made during
+        this
+        level about which type
+        course and career to pursue will change your future forever.
+        So, kindly make informed decisions and get a free guidance from our experts.
+
+      </p>
+      <a href="{% url 'main:free_counselling' %}" class="btn btn-primary">get free career counselling!</a>
+    </div>
+  </div>
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Free CET NEET Coaching</h5>
+      <p class="card-text">
+        We are offering limited free online coaching classes on every weekend to our member students who wish to
+        prepare for competitive exams mainly KCET and NEET. Member students of both Class 11th and 12th are
+        welcome to join this. Link to join classes will be shared with students WhatsApp number registered with
+        us.
+      </p>
+      <a href="{% url 'main:page' slug='free-cet-neet-coaching' %}" class="btn btn-primary">Read More...</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="card-group">
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Free Health & Accident Insurance Cover for Member Students</h5>
+      <p class="card-text">
+        Healthy students perform well in their academics. We at NPUSPTA understand the importance of wellbeing of our
+        member
+        students. Students are vulnerable and sensitive to many diseases and since they are in classroom together with
+        many
+        more pupils, risk of spreading the infections are very high. Complete closure of schools and colleges during
+        COVID-19 pandemic is an eye opener for everyone to witness how students are vulnerable.
+      </p>
+      <a href="{% url 'main:page' slug='free-health-and-accident-insurance-cover-for-member-students' %}"
+        class="btn btn-primary">Read More...</a>
+    </div>
+  </div>
+
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Essay Competition</h5>
+      <p class="card-text">
+        Exclusively For all 12th Students <br>
+        Essay Completion on “My Future Study & Career Plan” <br>
+        Write essay on your future study and career choice and plans after 12th, Get a chance to win Guaranteed
+        attractive prizes…
+      </p>
+      <a href="{% url 'main:page' slug='essay-competition' %}" class="btn btn-primary">Read more...</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="card-group">
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Apply for a scholorship</h5>
+      <p class="card-text">
+      <ul>
+        <li>This scholarship only for 12th passout students enrolling to professional higher education courses.</li>
+        <li>Terms & Conditions Apply</li>
+      </ul>
+      </p>
+      <a href="{% url 'main:scholorship' %}" class="btn btn-primary">Apply Scholorship 2022</a>
+    </div>
+  </div>
+
+  <div class="card shadow m-3">
+    <div class="card-body">
+      <h5 class="card-title">Donate Us</h5>
+      <p class="card-text">
+        We are committed to our cause but we always need your support. Any contribution from
+        you will bring us great strength and encouragement to reach out to more students, parents and teachers
+        and serve them better.
+      </p>
+      <a href="{% url 'main:page' slug='donate-us' %}" class="btn btn-primary">Donate Us</a>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% block title %}
+Free Health & Accident Insurance Cover for Member Students
+{% endblock title %}
+{% block content %}
+
+<div class="container">
+
+    <div class="card-group">
+
+        <div class="card m-2 shadow">
+            <div class="card-body">
+                <h2 class="card-title fw-light">Free Health & Accident Insurance Cover for Member Students
+                </h2>
+                <p class="card-text">
+                    Healthy students perform well in their academics. We at NPUSPTA understand the importance of
+                    wellbeing
+                    of our member
+                    students. Students are vulnerable and sensitive to many diseases and since they are in classroom
+                    together with many
+                    more pupils, risk of spreading the infections are very high. Complete closure of schools and
+                    colleges
+                    during
+                    COVID-19 pandemic is an eye opener for everyone to witness how students are vulnerable.
+                </p>
+                <p class="card-text">
+                    Apart from this student are also subjected to risk of accidents and injuries. Almost all students
+                    use
+                    some means of
+                    transportation to commute between school and home and frequency of accidents in our transportation
+                    system is quite
+                    high.
+                </p>
+                <p class="card-text">
+                    Also, many students are passionate about sports and games and are actively participating and
+                    training
+                    every day. It
+                    is very common to have injuries and not only frequency of injuries is regular but intensity of some
+                    sports injuries
+                    is also high.
+                </p>
+                <p class="card-text">
+                    Considering all these vulnerabilities and risks students carry we at NPUSPTA are providing them with
+                    Health and
+                    Insurance cover for free. Although we are strongly advocating for student safety at school premises
+                    but
+                    unable to
+                    prevent any health and injuries risks student may exposed to. So, through this initiative we are
+                    trying
+                    at least to
+                    mitigate any financial burden on parents arising from treatment and medical expenses of the student.
+                </p>
+            </div>
+        </div>
+
+        <div class="card shadow m-2">
+            <div class="card-header text-center">
+                <h3>Terms & Condition</h3>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> This insurance scheme is available for NPUSPTA member students only.
+                </li>
+                <li class="list-group-item"> Validity / Term of insurance for one year only.
+                </li>
+                <li class="list-group-item"> Due to lack of funds at present we are able to offer this free scheme for
+                    limited number of students who are actively involved in sports or games and at least participated in
+                    district level sports event.
+                </li>
+                <li class="list-group-item"> Students are recommended by Principals of schools. We select from received
+                    recommendation list by principals.
+                </li>
+                <li class="list-group-item"> Responsibility of NPUSPTA limited to issuing the insurance policy and
+                    bearing
+                    the cost of premium only.
+                </li>
+                <li class="list-group-item"> All procedures related to claims, settlement etc… as per the insurance
+                    company
+                    terms and conditions, policy and guidelines only.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card text-center">
+        <div class="card-body">
+            <a href="{% url 'main:membership' %}" class="card-link btn btn-primary shadow">Become a Member </a>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock content %}

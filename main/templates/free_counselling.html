@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block title %}
+Get free career counselling
+{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <div class="card my-3 shadow p-3">
+        <h2 class="card-title fw-light">Get free career counselling</h2>
+        <div class="card-body">
+            <p class="card-text">
+                Pre-University level is very crucial in any student's career life. Decisions made during this level
+                about which type
+                course and career to pursue will change your future forever.
+                So, kindly make informed decisions and get a free guidance from our experts.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow p-3">
+                {% bootstrap_messages %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                    {% buttons submit='Submit' reset="Cancel" %}{% endbuttons %}
+                    {% endbuttons %}
+                </form>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

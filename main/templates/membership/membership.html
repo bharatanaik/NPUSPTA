@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+Membership
+{% endblock title %}
+{% block content %}
+<div class="container">
+  {% if form_type == "teacher" %}
+  {% include 'membership/teacher.html' %}
+  {% elif form_type == "10th" %}
+  {% include 'membership/10th.html' %}
+  {% elif form_type == "12th" %}
+  {% include 'membership/12th.html' %}
+
+  {% else %}
+
+  <div class="card-group">
+    <div class="card m-3">
+      <div class="card-body">
+        <h5 class="card-title">Membership for students/ Parent</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{% url 'main:membership-below-10th' %}" class="btn btn-primary mb-3">Below 10th Standard</a>
+        <a href="{% url 'main:membership-12th' %}" class="btn btn-primary mb-3">11th & 12th Standard</a>
+      </div>
+    </div>
+    <div class="card m-3">
+      <div class="card-body">
+        <h5 class="card-title">Membership for Teachers</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{% url 'main:membership-teacher' %}" class="btn btn-primary">Become a member as Teacher</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endif %}
+
+</div>
+{% endblock content %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block title %}
+Fee Waiver / Concession/ Scholarship Application Form
+{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <div class="card my-3 shadow p-3">
+        
+        <div class="card-body">
+            <h2 class="card-title">Fee Waiver / Concession/ Scholarship Application Form</h2>
+            <p class="card-text">Get Upto Rs.30,000/- Scholarship</p>
+            <p class="card-text">
+                Every year we at NPUSPTA help our member students in enrolling to professional higher education courses
+                by providing them Scholarship. Aim of this scholarship is to reduce the burden of high fees to some
+                extent and encourage students to pursue higher education than discontinuing their studies after 12th.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow p-3 mb-3">
+                {% bootstrap_messages %}
+                <form method="POST">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    {% buttons %}
+                    {% buttons submit='Submit' reset="Cancel" %}{% endbuttons %}
+                    {% endbuttons %}
+
+                </form>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+            <div class="card shadow mb-3">
+                <div class="card-body">
+                    <h3 class="card-title">Terms & Conditions</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item"> This Scholarship for NPUSPTA member students only.
+                        </li>
+                        <li class="list-group-item"> Students who are passing out 12th this academic year are eligible.
+                        </li>
+                        <li class="list-group-item"> Scholarship applicable to Professional Higher Education Courses
+                            like
+                            Engineering, Nursing, Hotel Management etc… only, not all course after 12th. Kindly confirm
+                            with us
+                            which courses are eligible before joining the course or applying for scholarship.
+                        </li>
+                        <li class="list-group-item"> Student who are joining regular academic courses like B.Com, BBA,
+                            B.Sc, B.A
+                            etc… are not eligible to avail this scholarship.
+                        </li>
+                        <li class="list-group-item"> Scholarship is applicable for select few higher education colleges
+                            only not
+                            all higher education colleges. Kindly confirm with us which colleges and courses are
+                            eligible before
+                            joining the College / Course or applying for scholarship.
+                        </li>
+                        <li class="list-group-item"> Scholarship amount varies among courses and colleges.
+                        </li>
+                        <li class="list-group-item"> Scholarship is paid after completing the first semester of courses
+                            enrolled
+                            and not immediately after admission.
+                        </li>
+                        <li class="list-group-item"> If colleges already extended some kind of fees concession for being
+                            NPUSPTA
+                            member student, then scholarship will not be applicable.
+                        </li>
+                        <li class="list-group-item"> Scholarship is applicable for new admission under NPUSPTA reference
+                            and
+                            guidance only.
+                        </li>
+                        <li class="list-group-item"> If you have already taken admission without our guidance and
+                            consultation,
+                            then scholarship is not applicable.
+                        </li>
+                        <li class="list-group-item"> Awarding scholarship is based on the fund’s availability with
+                            NPUSPTA.
+                        </li>
+                        <li class="list-group-item"> There may be delay in releasing the scholarship amount if there is
+                            a lack
+                            of sufficient funds with us.
+                        </li>
+                        <li class="list-group-item"> NPUSPTA reserves final rights with approving and declining the
+                            scholarship
+                            application. Decision taken by NPUSPTA cannot be disputed.
+                        </li>
+                        <li class="list-group-item"> For more details, please call or WhatsApp our helpline number
+                            +919137386752
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card{
+        border-radius: 30px;
+    }
+</style>
+
+
+{% endblock content %}
