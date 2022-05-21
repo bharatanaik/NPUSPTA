@@ -43,7 +43,6 @@ class CustomCreateView(CreateView):
 
 
     def send_email(self, form):
-        self.mail_context["static_url"] = self.request.build_absolute_uri()+"/static/" if "127.0.0.1" not in self.request.build_absolute_uri() else "https://npuspta.org/static/"
         message = render_to_string(self.mail_template, self.mail_context)
         to_email = form.cleaned_data["email"]
         email = send_mail(
