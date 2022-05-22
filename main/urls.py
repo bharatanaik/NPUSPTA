@@ -9,7 +9,7 @@ urlpatterns = [
     path("contact-us", ContactView.as_view(), name="contact"),
     path("page/<slug:slug>", PageView.as_view(), name="page"),
     path("apply-scholorship", ScholorshipView.as_view(), name="scholorship"),
-    path("membership", MembershipView.as_view(), name="membership"),
+    path("member.html", MembershipView.as_view(), name="membership"),
     path("membership/teacher", MembershipTeacherView.as_view(),
          name="membership-teacher"),
     path("membership/below-10th", Membership10thView.as_view(),
