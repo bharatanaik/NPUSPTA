@@ -7,7 +7,9 @@ from core.utils import Viewer, CustomCreateView
 from main.models import *
 from django.views.generic import CreateView
 from django import forms
-
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 PAGES = {
     "private-school-fee-regulation-bill": 1,
@@ -33,8 +35,30 @@ class AboutView(Viewer):
     template_name = "about.html"
 
 
-class ContactView(Viewer):
+class ContactView(CreateView):
     template_name = "contact.html"
+    model = Contact
+    fields = "__all__"
+    success_url = reverse_lazy("main:contact")
+
+    def form_valid(self, form):
+        text = f'''
+        We have received your message. If your inquiry is urgent, please use the phone number to talk to us. 
+        Otherwise, we will reply by email as soon as possible.
+        Talk to you soon,'''
+        messages.success(self.request, text)
+        name = form.cleaned_data["name"]
+        mail_context = form.cleaned_data
+        send_mail(
+            subject=f"NPUSPTA | User: {name} sent a message",
+            message = "simple message",
+            html_message = render_to_string("email templates/contact_admin.html", mail_context),
+            from_email="mail@npuspta.org",
+            recipient_list=["bharat.anaik2003@gmail.com"])
+        return super().form_valid(form)
+
+
+
 
 class PageView(Viewer):
     def get(self, request, *args, **kwargs):

@@ -1,4 +1,3 @@
-
 from django.db import models
 
 CLASS = (
@@ -159,3 +158,14 @@ class Notice(models.Model):
     
     def __str__(self) -> str:
         return self.notice
+
+
+class Contact(models.Model):
+    # ip_address = models.GenericIPAddressField()
+    name = models.CharField(max_length=1000)
+    email = models.EmailField()
+    phone = models.CharField(max_length=15)
+    message = models.CharField(max_length=5000)
+
+    def __str__(self) -> str:
+        return self.name

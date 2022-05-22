@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load bootstrap5 %}
 {% block title %}
 Contact us
 {% endblock title %}
 {% block content %}
 
 <style>
-    .card{
-        border-radius: 30px;
+    .card {
+        border-radius: 20px;
     }
 </style>
 
@@ -17,38 +18,27 @@ Contact us
         <h2 class="display-4">Contact us</h2>
         <hr>
         <div class="col-md-4">
-            
+
             <div class="card shadow mb-3">
                 <div class="card-body">
                     <p><i class="fa-solid fa-phone me-2"></i>+91 9137386752</p>
                     <p><i class="fa-solid fa-envelope me-2"></i>npusptaindia@gmail.com</p>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="col-md-8">
             <div class="card shadow">
                 <div class="card-body">
-                    <form class="m-3" method="post">
+                    {% bootstrap_messages %}
+                    <form method="POST">
                         {% csrf_token %}
-                        <div class="mb-3">
-                            <label for="name" class="form-label"><i class="fa-solid fa-user me-2"></i> Name *</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email_address" class="form-label"><i class="fa-solid fa-envelope me-2"></i>  Email address *</label>
-                            <input type="email" class="form-control" id="email_address" name="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="id_phone" class="form-label"><i class="fa-solid fa-phone me-2"></i>  Phone Number *</label>
-                            <input type="number" class="form-control" id="id_phone" name="phone" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label"><i class="fa-solid fa-pen me-2"></i>Message </label>
-                            <textarea class="form-control" id="message" rows="3" name="message"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        {% bootstrap_form form %}
+                        {% buttons %}
+                        {% buttons submit='Submit' reset="Cancel" %}{% endbuttons %}
+                        {% endbuttons %}
+
                     </form>
                 </div>
             </div>

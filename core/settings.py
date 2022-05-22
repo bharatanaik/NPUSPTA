@@ -13,7 +13,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'mail@npuspta.org'
 EMAIL_HOST_PASSWORD =   email_password
-EMAIL_PORT = 465
+EMAIL_PORT = 587
 
 # Application definition
 INSTALLED_APPS = [

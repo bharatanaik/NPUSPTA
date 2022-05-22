@@ -35,12 +35,10 @@ class Viewer(View):
 
 class CustomCreateView(CreateView):
     thank_you_template = None
-
     mail_template = None
     mail_field_name = "email"
     mail_subject = ""
     mail_context = dict()
-
 
     def send_email(self, form):
         message = render_to_string(self.mail_template, self.mail_context)
@@ -57,7 +55,6 @@ class CustomCreateView(CreateView):
         else:
             raise "Email not sent by server"
         
-
     def form_valid(self, form):
         if self.mail_template is not None:
             self.send_email(form)
