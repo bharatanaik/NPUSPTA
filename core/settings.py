@@ -1,4 +1,4 @@
-# NPUSPTA settings.py
+# NPUSPTA settings.py  
 import os
 from pathlib import Path
 from core.secrets import *
