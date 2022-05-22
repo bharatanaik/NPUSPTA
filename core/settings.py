@@ -3,16 +3,15 @@ import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = '6sv^9hz4tyvu#9rf344*)a9#te_qd@v#6c3j#og)up(x6f$@v*'
 DEBUG = False
 ALLOWED_HOSTS = ['www.npuspta.org', 'npuspta.org']
-
 
 # email settings
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'mail@npuspta.org'
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_HOST_PASSWORD = '#NPUSPTA~mail2003'
 EMAIL_PORT = 465
 
 # Application definition
@@ -59,9 +58,9 @@ WSGI_APPLICATION = 'core.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':os.environ.get("DATABASE_NAME"),
-        'USER': os.environ.get("DATABASE_USER"),
-        'PASSWORD':os.environ.get("DATABASE_PASSWORD"),
+        'NAME':'vahqwpml_npuspta',
+        'USER': 'vahqwpml_bharat',
+        'PASSWORD':'data@npuspta2003',
         'HOST':'localhost',
         'PORT':3306
     }
