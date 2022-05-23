@@ -13,7 +13,7 @@ SCRIPT_NAME = os.getcwd()
 
 class PassengerPathInfoFix(object):
     """
-        Sets PATH_INFO from REQUEST_URI because Passenger doesn't provide it.
+        Sets PATH_INFO from REQUEST_URI because Passenger doesn't provide it..
     """
     def __init__(self, app):
         self.app = app
