@@ -1,5 +1,7 @@
 # Main Views of NPUSPTA
 
+
+
 from datetime import date
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -25,6 +27,9 @@ class IndexView(Viewer):
     template_name = "index.html"
 
     def get_context(self):
+        from main.urls import urlpatterns
+        for i in urlpatterns:
+            print(i.name)
         self.context['is_mobile'] = True if "Mobile" in self.request.headers.get(
             "User-Agent") else False
         self.context["notices"] = Notice.objects.all()

@@ -3,6 +3,7 @@ from main.views import *
 
 app_name = "main"
 
+
 urlpatterns = [
     path("", IndexView.as_view(), name="index"),
     path("about-us", AboutView.as_view(), name="about"),
@@ -16,4 +17,6 @@ urlpatterns = [
          name="membership-below-10th"),
     path("membership/12th", Membership12thView.as_view(), name="membership-12th"),
     path("free-counselling", FreeCounsellingView.as_view(), name="free_counselling"),
+
+    
 ]
