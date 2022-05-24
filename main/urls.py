@@ -1,3 +1,4 @@
+from os import name
 from django.urls import path
 from main.views import *
 
@@ -17,6 +18,7 @@ urlpatterns = [
          name="membership-below-10th"),
     path("membership/12th", Membership12thView.as_view(), name="membership-12th"),
     path("free-counselling", FreeCounsellingView.as_view(), name="free_counselling"),
+#     path("email-view/<str:name>", email_viewer, name="email-view")
 
     
 ]

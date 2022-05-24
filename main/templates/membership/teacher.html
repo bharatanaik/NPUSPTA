@@ -1,18 +1,13 @@
 {% extends 'base.html' %}
 {% load bootstrap5 %}
 {% block title %}
-Free Membership Form: Teachers
+Free Membership Form: Teacher
 {% endblock title %}
 {% block content %}
 
 <div class="container">
-    {% if thank_you %}
-    {% include 'thankyou.html' %}
-    {% else %}
-
-
     <div class="card my-3 shadow p-3">
-        <h2 class="card-title fw-light">Free Membership Form: Teachers</h2>
+        <h2 class="card-title fw-light">Free Membership Form: Teacher</h2>
     </div>
 
 
@@ -26,11 +21,11 @@ Free Membership Form: Teachers
                     {% buttons %}
                     {% buttons submit='Submit' reset="clear form" %}{% endbuttons %}
                     {% endbuttons %}
+                    
                 </form>
             </div>
         </div>
     </div>
-    {% endif %}
 </div>
 
 

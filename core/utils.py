@@ -42,7 +42,7 @@ class CustomCreateView(CreateView):
 
     def send_email(self, form):
         message = render_to_string(self.mail_template, self.mail_context)
-        to_email = form.cleaned_data["email"]
+        to_email = form.cleaned_data[self.mail_field_name]
         email = send_mail(
             subject=self.mail_subject,
             message = message,
@@ -50,12 +50,14 @@ class CustomCreateView(CreateView):
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[to_email]
         )
+        print("email sent!")
         if email == 1:
             return True
         else:
             raise "Email not sent by server"
         
     def form_valid(self, form):
+
         if self.mail_template is not None:
             self.send_email(form)
         if self.thank_you_template is not None:
@@ -65,3 +67,8 @@ class CustomCreateView(CreateView):
     def post(self, request, *args: str, **kwargs):
         super().post(request, *args, **kwargs)
         return render(request, self.thank_you_template)
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.required_css_class = "required"
+        return form

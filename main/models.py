@@ -50,6 +50,13 @@ class Scholorship(models.Model):
 
 
 class Membership10th(models.Model):
+    
+    name = models.CharField(
+        max_length=1000, verbose_name="Name of the Student")
+    Class = models.CharField(max_length=1000, verbose_name='Class studying')
+
+    contact = models.CharField(max_length=10, verbose_name="Contact Number")
+    email = models.EmailField(verbose_name="Email Id")
     fname = models.CharField(max_length=1000, verbose_name='Name of Father')
     focc = models.CharField(
         max_length=1000, verbose_name="Father's Occupation", null=True, blank=True)
@@ -62,13 +69,6 @@ class Membership10th(models.Model):
     mcon = models.CharField(
         max_length=1000, verbose_name="Mother's Contact Number", null=True, blank=True)
     mmail = models.CharField(max_length=1000, verbose_name="Mother's Email Id", null=True, blank=True)
-    name = models.CharField(
-        max_length=1000, verbose_name="Name of the Student")
-    Class = models.CharField(max_length=1000, verbose_name='Class studying')
-
-    contact = models.CharField(max_length=10, verbose_name="Contact Number")
-    email = models.EmailField(verbose_name="Email Id")
-
     religion = models.CharField(max_length=100, null=True, blank=True)
     caste = models.CharField(max_length=100, null=True, blank=True)
     school = models.CharField(
@@ -91,6 +91,13 @@ class AssistanceChoices(models.Model):
 
 
 class Membership12th(models.Model):
+    
+
+    name = models.CharField(
+        max_length=1000, verbose_name="Name of the Student")
+    wno = models.CharField(
+        max_length=1000, verbose_name="Student's Whatsapp Number")
+    email = models.EmailField(verbose_name="Email Id")
     fname = models.CharField(max_length=1000, verbose_name='Name of Father')
     focc = models.CharField(
         max_length=1000, verbose_name="Father's Occupation", null=True, blank=True)
@@ -104,12 +111,6 @@ class Membership12th(models.Model):
     mcon = models.CharField(
         max_length=1000, verbose_name="Mother's Contact Number", null=True, blank=True)
     mmail = models.CharField(max_length=1000, verbose_name="Mother's Email Id", null=True, blank=True)
-
-    name = models.CharField(
-        max_length=1000, verbose_name="Name of the Student")
-    wno = models.CharField(
-        max_length=1000, verbose_name="Student's Whatsapp Number")
-    email = models.EmailField(verbose_name="Email Id")
     Class = models.CharField(max_length=100, choices=CLASS)
     stream = models.CharField(max_length=10, choices=STREAM)
     combination = models.CharField(max_length=1000)

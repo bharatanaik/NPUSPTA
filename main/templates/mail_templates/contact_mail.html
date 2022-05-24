@@ -1,0 +1,10 @@
+{% extends 'base_mail.html' %}
+{% block content %}
+<p><b>from,</b></p> 
+<p><b>{{ name }}</b></p>
+<p>email:<span style="font-family: monospace;"> {{ email }}</span></p>
+<p>phone:<span style="font-family: monospace;">{{ phone }}</span> </p>
+<hr>
+<p>{{ message }}</p>
+
+{% endblock content %}
