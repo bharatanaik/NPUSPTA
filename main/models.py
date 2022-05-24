@@ -16,6 +16,9 @@ class FreeCounselling(models.Model):
     career = models.CharField(
         max_length=1000, verbose_name="Career Choice After 12th")
 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self) -> str:
         return self.name
 
@@ -44,6 +47,8 @@ class Scholorship(models.Model):
         max_length=1000, verbose_name="Annual Family Income:")
     loan = models.CharField(
         max_length=1000, verbose_name="Availing Education Loan:", choices=(("Yes", "Yes"), ("No", "No")))
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:
         return self.name
@@ -78,6 +83,9 @@ class Membership10th(models.Model):
         max_length=1000, verbose_name='City / Town / Place')
     district = models.CharField(max_length=1000, verbose_name='District')
     state = models.CharField(max_length=1000, verbose_name='State')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         self.name
@@ -91,8 +99,6 @@ class AssistanceChoices(models.Model):
 
 
 class Membership12th(models.Model):
-    
-
     name = models.CharField(
         max_length=1000, verbose_name="Name of the Student")
     wno = models.CharField(
@@ -125,6 +131,8 @@ class Membership12th(models.Model):
         max_length=1000, verbose_name="Career Choice After 12th")
     assistance = models.ManyToManyField(
         AssistanceChoices, verbose_name="What assistance you looking for:", null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -148,6 +156,8 @@ class MembershipTeacher(models.Model):
         max_length=1000, verbose_name='Working experience in years:')
     qualification = models.CharField(
         max_length=1000, verbose_name='Highest Education Qualification :')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -162,11 +172,13 @@ class Notice(models.Model):
 
 
 class Contact(models.Model):
-    # ip_address = models.GenericIPAddressField()
     name = models.CharField(max_length=1000)
     email = models.EmailField()
     phone = models.CharField(max_length=15)
     message = models.CharField(max_length=5000)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
     def __str__(self) -> str:
         return self.name

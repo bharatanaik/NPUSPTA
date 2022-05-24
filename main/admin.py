@@ -10,8 +10,6 @@ admin.site.site_header = "NPUSPTA"
 class FreeCounsellingAdmin(ExportActionModelAdmin):
     list_filter = ('stream', 'Class')
 
-admin.site.register(FreeCounselling , FreeCounsellingAdmin)
-
 
 class ScholorshipAdmin(ExportActionModelAdmin):
     pass
@@ -24,6 +22,7 @@ class Membership10thAdmin(ExportActionModelAdmin):
     pass
 
 class Membership12thAdmin(ExportActionModelAdmin):
+    list_display = ("name", "created_at")
     formfield_overrides = {
         models.ManyToManyField: {'widget': CheckboxSelectMultiple},
     }
@@ -34,3 +33,4 @@ admin.site.register(Membership10th, Membership10thAdmin)
 admin.site.register(Membership12th, Membership12thAdmin)
 admin.site.register(AssistanceChoices)
 admin.site.register(Notice)
+admin.site.register(FreeCounselling, FreeCounsellingAdmin)
