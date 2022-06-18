@@ -97,7 +97,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/home/vahqwpml/public_html/static'
+STATIC_ROOT = '/home/iapshoyw/public_html/static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
