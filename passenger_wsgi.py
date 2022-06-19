@@ -1,7 +1,5 @@
 import os
 import sys
-
-import django.core.handlers.wsgi
 from django.core.wsgi import get_wsgi_application
 
 # Set up paths and environment variables
