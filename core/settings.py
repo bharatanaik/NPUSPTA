@@ -5,7 +5,7 @@ from core.secrets import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secret_key
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['www.npuspta.org', 'npuspta.org']
 
 # email settings
