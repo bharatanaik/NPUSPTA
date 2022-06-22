@@ -100,7 +100,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = '/home/iapshoyw/public_html/static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ['npuspta.org', 'www.npuspta.org']
+CSRF_TRUSTED_ORIGINS = ['https://npuspta.org', 'https://www.npuspta.org']
 
 try:
     from local_settings import *
