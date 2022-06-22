@@ -6,7 +6,7 @@ from core.secrets import *
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secret_key
 DEBUG = True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['npuspta.org', 'www.npuspta.org']
 
 # email settings
 EMAIL_USE_TLS = True
@@ -100,7 +100,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = '/home/iapshoyw/public_html/static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+CSRF_TRUSTED_ORIGINS = ['npuspta.org', 'www.npuspta.org']
 
 try:
     from local_settings import *
