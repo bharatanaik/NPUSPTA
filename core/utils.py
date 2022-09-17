@@ -50,7 +50,6 @@ class CustomCreateView(CreateView):
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[to_email]
         )
-        print("email sent!")
         if email == 1:
             return True
         else:

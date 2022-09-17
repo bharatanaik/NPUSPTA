@@ -1,6 +1,5 @@
 # Main Views of NPUSPTA
-
-from django.shortcuts import render
+from django.conf import settings
 from django.urls import reverse_lazy
 from core.utils import Viewer, CustomCreateView
 from main.models import *
@@ -58,7 +57,7 @@ class ContactView(CreateView):
             message = "simple message",
             html_message = render_to_string("mail_templates/contact_mail.html", mail_context),
             from_email="mail@npuspta.org",
-            recipient_list=["bharat.anaik2003@gmail.com"])
+            recipient_list=settings.ADMIN_EMAILS)
         return super().form_valid(form)
 
 
@@ -144,6 +143,3 @@ class FreeCounsellingView(CustomCreateView):
     thank_you_template = "thank_you/free_counselling.html"
     
 
-
-# def email_viewer(request, name):
-#     return render(request, "mail_templates/"+name)

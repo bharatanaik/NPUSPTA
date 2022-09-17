@@ -39,6 +39,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'core.urls'
 
+ADMIN_EMAILS = ["bharat.anaik2003@gmail.com", "mitheshmoodukonaje@gmail.com"]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
