@@ -88,7 +88,7 @@ class Membership10th(models.Model):
 
 
     def __str__(self):
-        self.name
+        return self.name
 
 
 class AssistanceChoices(models.Model):
