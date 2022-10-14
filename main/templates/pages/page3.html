@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
 Donate us
 {% endblock title %}
@@ -10,35 +11,45 @@ Donate us
             <h2 class="display-3 card-title">Donate us</h2>
         </div>
     </div>
-    <div class="card my-3">
-        <div class="card-body">
-            <p class="card-text">We are committed to our cause but we always need your support. Any contribution from
-                you will bring us great strength and encouragement to reach out to more students, parents and teachers
-                and serve them better.
-            </p>
-        </div>
-    </div>
-    <div class="card my-3">
-        <div class="card-body">
-            <h5 class="card-title display-5">Bank Account Details:</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Account Number:</b> <code>0186104000482271</code></li>
-            <li class="list-group-item">
-                <b>Account Holder Name:</b> <code>M/S National Pre-University Students, Parents & Teachers Association Trust.</code>
-            </li>
-            <li class="list-group-item"><b>Account Type:</b> <code>Savings</code></li>
-            <li class="list-group-item"><b>Branch:</b> <code>Udupi, Karnataka</code></li>
-            <li class="list-group-item"><b>IFSC Code:</b> <code>IBKL0000186</code></li>
-            <li class="list-group-item"><b>MICR Code:</b> <code>576259002</code></li>
-            <li class="list-group-item"><b>PIN Code:</b> <code>576101</code></li>
-            <li class="list-group-item"><b>UPI ID:</b>
-                Google Pay / Phone Pay / PayTM Number: <code>9137386752</code></li>
-        </ul>
-        <div class="card-body">
-            <p class="card-text">
-                <i>Please Note: Donations to us are not yet exempt from Income Tax.</i>
-            </p>
+    <div class="row">
+        <div class="col-md-6 p-3">
+            <img  src="{% static 'qrcode.png' %}" class="img-fluid" alt="...">
+        </div>   
+        <div class="col-md-6">
+            <div class="card my-3">
+                <div class="card-body">
+                    <p class="card-text">We are committed to our cause but we always need your support. Any contribution from
+                        you will bring us great strength and encouragement to reach out to more students, parents and teachers
+                        and serve them better.
+                    </p>
+                </div>
+            </div>
+            <div class="card my-3">
+                <div class="card-body">
+                    <h5 class="card-title display-5">Bank Account Details:</h5>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><b>Account Number:</b> <code>0186104000482271</code></li>
+                        <li class="list-group-item">
+                            <b>Account Holder Name:</b>
+                            <code>M/S National Pre-University Students, Parents & Teachers Association Trust.</code>
+                        </li>
+                        <li class="list-group-item"><b>Account Type:</b> <code>Savings</code></li>
+                        <li class="list-group-item"><b>Branch:</b> <code>Udupi, Karnataka</code></li>
+                        <li class="list-group-item"><b>IFSC Code:</b> <code>IBKL0000186</code></li>
+                        <li class="list-group-item"><b>MICR Code:</b> <code>576259002</code></li>
+                        <li class="list-group-item"><b>PIN Code:</b> <code>576101</code></li>
+                        <li class="list-group-item"><b>UPI ID:</b>
+                            Google Pay / Phone Pay / PayTM Number: <code>9137386752</code></li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <i>Please Note: Donations to us are not yet exempt from Income Tax.</i>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -46,7 +57,7 @@ Donate us
 
 
 <style>
-    code{
+    code {
         font-size: 18px;
     }
 </style>
