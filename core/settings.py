@@ -5,9 +5,9 @@ from core.secrets import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secret_key
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['npuspta.org', 'www.npuspta.org']
-
+# SECURE_SSL_REDIRECT = True
 # email settings
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'localhost'
