@@ -2,13 +2,14 @@
 import os
 from pathlib import Path
 from core.secrets import *
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = secret_key
 DEBUG = False
 ALLOWED_HOSTS = ['npuspta.org', 'www.npuspta.org']
-# SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = True
 # email settings
+PRODUCTION = False
+
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'mail@npuspta.org'
@@ -56,24 +57,6 @@ TEMPLATES = [
         },
     },
 ]
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': BASE_DIR / 'debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'ERROR',
-            'propagate': True,
-        },
-    },
-}
 WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
@@ -120,9 +103,4 @@ STATIC_ROOT = '/home/iapshoyw/public_html/static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CSRF_TRUSTED_ORIGINS = ['https://npuspta.org', 'https://www.npuspta.org']
-
-try:
-    from local_settings import *
-except:
-    pass
-
+    
