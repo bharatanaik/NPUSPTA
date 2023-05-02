@@ -57,16 +57,16 @@ coverage.xml
 
 # Django stuff:
 *.log
-local_settings.py
-db.sqlite3
 db.sqlite3-journal
-migrations/
+
 staticfiles/
 
 # Cpanel Stuff
 tmp/
 public/
 
+
+desktop.ini
 
 
 # Flask stuff:

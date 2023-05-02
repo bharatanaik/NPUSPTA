@@ -1,20 +1,42 @@
 # NPUSPTA settings.py  
-import os
+
 from pathlib import Path
-from core.secrets import *
+from django.core.management.commands.runserver import Command as runserver
+runserver.default_port = "8070"
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = secret_key
+SECRET_KEY = '6sv^9hz4tyvu#9rf344*)a9#te_qd@v#6c3j#og)up(x6f$@v*'
 DEBUG = False
-ALLOWED_HOSTS = ['npuspta.org', 'www.npuspta.org']
-SECURE_SSL_REDIRECT = True
-# email settings
-PRODUCTION = False
+ALLOWED_HOSTS = ['127.0.0.1','npuspta.org', 'www.npuspta.org']
+
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'localhost'
 EMAIL_HOST_USER = 'mail@npuspta.org'
-EMAIL_HOST_PASSWORD =   email_password
+EMAIL_HOST_PASSWORD =   "#NPUSPTA~mail2003"
 EMAIL_PORT = 587
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+
+"""PRODUCTION SETTINGS (DEBUG = FALSE)"""
+if not DEBUG:
+    ALLOWED_HOSTS = ['npuspta.org']
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 518400 
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    CSRF_TRUSTED_ORIGINS = ['https://npuspta.org', 'https://www.npuspta.org']
+
 
 # Application definition
 INSTALLED_APPS = [
@@ -59,38 +81,6 @@ TEMPLATES = [
 ]
 WSGI_APPLICATION = 'core.wsgi.application'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':data_name,
-        'USER': data_user,
-        'PASSWORD': data_pass,
-        'HOST':'localhost',
-        'PORT':3306,
-        'OPTIONS':{
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-    }
-}
-
-
-# Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
-]
 
 BOOTSTRAP5 = {"set_placeholder":False}
 LANGUAGE_CODE = 'en-us'
@@ -102,5 +92,4 @@ STATIC_URL = 'static/'
 STATIC_ROOT = '/home/iapshoyw/public_html/static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ['https://npuspta.org', 'https://www.npuspta.org']
     

@@ -130,7 +130,7 @@ class Membership12th(models.Model):
     career = models.CharField(
         max_length=1000, verbose_name="Career Choice After 12th")
     assistance = models.ManyToManyField(
-        AssistanceChoices, verbose_name="What assistance you looking for:", null=True, blank=True)
+        AssistanceChoices, verbose_name="What assistance you looking for:")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
